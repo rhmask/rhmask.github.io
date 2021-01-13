@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="rhmask" />
+  <meta property="og:url" content="https://rhmask.github.io/posts/windows_terminal/" />
+  <link rel="canonical" href="https://rhmask.github.io/posts/windows_terminal/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://rhmask.github.ioindex.xml" title="">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/rhmask.github.io"
+      },
+      "articleSection" : "posts",
+      "name" : "Windows右键菜单添加Terminal",
+      "headline" : "Windows右键菜单添加Terminal",
+      "description" : "\u003cp\u003eTerminal 可直接在微软商店下载即可\u003c\/p\u003e",
+      "inLanguage" : "en-US",
+      "author" : "rhmask",
+      "creator" : "rhmask",
+      "publisher": "rhmask",
+      "accountablePerson" : "rhmask",
+      "copyrightHolder" : "rhmask",
+      "copyrightYear" : "2021",
+      "datePublished": "2021-01-13 21:26:48 \u002b0800 CST",
+      "dateModified" : "2021-01-13 21:26:48 \u002b0800 CST",
+      "url" : "https:\/\/rhmask.github.io\/posts\/windows_terminal\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Windows右键菜单添加Terminal - </title>
+  <meta property="og:title" content="Windows右键菜单添加Terminal - " />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Terminal 可直接在微软商店下载即可" />
+  <meta name="description" content="Terminal 可直接在微软商店下载即可" />
+  <meta property="og:locale" content="" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">rhmask</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Windows右键菜单添加Terminal</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2021-01-13 21:26:48 CST">
+                13 Jan 2021
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://rhmask.github.io">@rhmask</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>Terminal 可直接在微软商店下载即可</p>
+<h4 id="添加到右键">添加到右键</h4>
+<p>用 cmd 分别运行下面两句命令</p>
+<pre><code>
+echo %USERPROFILE%
+
+echo %LOCALAPPDATA%
+
+</code></pre><h4 id="terminal-图标">Terminal 图标</h4>
+<p>创建一个文件夹</p>
+<pre><code>
+C:\Users\你的用户名\AppData\Local 新建一个 Terminal 文件夹
+
+就是这个样子 C:\Users\你的用户名\AppData\Local\Terminal
+
+</code></pre><blockquote>
+<p>建立这个文件就是为了放图标，也可以自己找个地方放图标 但是下面涉及到的路径要进行自行修改</p>
+</blockquote>
+<p><img src="https://gitee.com/rhmask/tuchaung/raw/master/terminal.ico" alt="Terminal "></p>
+<p>把上图放到新建立的文件夹中</p>
+<h4 id="添加注册表文件">添加注册表文件</h4>
+<p>新建一个注册表文件如 Terminal.reg 内容如下所示</p>
+<pre><code>
+Windows Registry Editor Version 5.00
+
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt]
+
+@=&quot;Windows terminal here&quot;
+
+&quot;Icon&quot;=&quot;C:\\Users\\[Username]\\AppData\\Local\\terminal\\terminal.ico&quot;
+
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]
+
+@=&quot;C:\\Users\\[Username]\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe&quot;
+
+</code></pre><blockquote>
+<p>username 改为你的用户名 根据自己图片所在的实际路径来修改 Icon</p>
+</blockquote>
+<p>双击运行写入注册表</p>
+<p>现在右键就可以看到 Windows Terminal here 项</p>
+<p>打开  Windows Terminal   Ctrl+,(设置)</p>
+<p>// 在Windows Powersell 配置中添加</p>
+<p>&ldquo;startingDirectory&rdquo;:null</p>
+<p>这样就实现了在当前位置打开Terminal</p>
+<hr>
+<h3 id="美化windows-powershell">美化Windows powershell</h3>
+<p>首先看一下自己的本地策略</p>
+<pre><code>
+➜ Get-ExecutionPolicy -List
+
+
+
+        Scope ExecutionPolicy
+
+        ----- ---------------
+
+MachinePolicy       Undefined
+
+   UserPolicy       Undefined
+
+      Process       Undefined
+
+  CurrentUser       Undefined
+
+ LocalMachine    RemoteSigned
+
+</code></pre><p>如果是这样就不需要做修改了，如果不是就执行</p>
+<pre><code>
+set-ExecutionPolicy RemoteSigned
+
+</code></pre><blockquote>
+<p><strong>一定要以管理员的身份启动powershell，并运行set-ExecutionPolicy RemoteSigned命令</strong></p>
+</blockquote>
+<h4 id="安装oh-my-posh">安装oh-my-posh</h4>
+<p>需要安装posh-git 和 oh-my-posh 这两个东西</p>
+<pre><code>
+Install-Module posh-git -Scope CurrentUser
+
+Install-Module oh-my-posh -Scope CurrentUser
+
+</code></pre><p>出现的提示输入 Y 或者输入 A</p>
+<blockquote>
+<p>根据提示输入即可，安装期间耐心等待</p>
+</blockquote>
+<p>接下来安装字体，推荐第二个</p>
+<p>[Code Pro for Powerline.otf](<a href="https://github.com/powerline/fonts/raw/master/SourceCodePro/Source">https://github.com/powerline/fonts/raw/master/SourceCodePro/Source</a> Code Pro for Powerline.otf)</p>
+<p><a href="https://github.com/adam7/delugia-code/releases/download/v1910.04.1/Delugia.Nerd.Font.Complete.ttf">Delugia.Nerd.Font.Complete.ttf</a></p>
+<blockquote>
+<p>PowerShell 配置文件路径存放在自动化变量$profile中</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>使用命令 $PROFILE | Format-List -Force 即可查看所有</p>
+</blockquote>
+<pre><code>
+ // 修改配置文件,如果没有，会提示你新建
+
+
+
+notepad $PROFILE
+
+
+
+//内容
+
+Import-Module posh-git
+
+Import-Module oh-my-posh
+
+Set-Theme Paradox // 主题选择 根据自己喜好自行更改，
+
+//比如：Sorin Agnoster Avit robbyrussell（oh-my-zsh的默认主题）
+
+</code></pre><p>现在重启就可以看到效果了</p>
+<h3 id="参考链接">参考链接</h3>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/terminal/tutorials/powerline-setup">教程：在 Windows 终端中设置 Powerline</a></p>
+<p><a href="https://github.com/JanDeDobbeleer/oh-my-posh#themes">oh-my-posh</a></p>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://rhmask.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">About</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/rhmask" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

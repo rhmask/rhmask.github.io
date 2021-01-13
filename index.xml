@@ -5,6 +5,25 @@
     <link>https://rhmask.github.io/</link>
     <description>Recent content on rhmask</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://rhmask.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Jan 2021 19:37:29 +0800</lastBuildDate><atom:link href="https://rhmask.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>One</title>
+      <link>https://rhmask.github.io/posts/one/</link>
+      <pubDate>Wed, 13 Jan 2021 19:37:29 +0800</pubDate>
+      
+      <guid>https://rhmask.github.io/posts/one/</guid>
+      <description>测试页面1 测试一下</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://rhmask.github.io/about/</link>
+      <pubDate>Wed, 13 Jan 2021 17:23:42 +0800</pubDate>
+      
+      <guid>https://rhmask.github.io/about/</guid>
+      <description>关于 这就是个测试页面</description>
+    </item>
+    
   </channel>
 </rss>

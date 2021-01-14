@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on rhmask</title>
+    <link>https://rhmask.github.io/tags/windows/</link>
+    <description>Recent content in Windows on rhmask</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 01 Jan 2021 21:26:48 +0800</lastBuildDate><atom:link href="https://rhmask.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows右键菜单添加Terminal</title>
+      <link>https://rhmask.github.io/post/windows_terminal/</link>
+      <pubDate>Fri, 01 Jan 2021 21:26:48 +0800</pubDate>
+      
+      <guid>https://rhmask.github.io/post/windows_terminal/</guid>
+      <description>Terminal 可直接在微软商店下载即可 添加到右键 用 cmd 分别运行下面两句命令 1 2 3 echo %USERPROFILE% echo %LOCALAPPDATA% Terminal 图标 创建一个文件夹 1 2 3 C:\Users\你的用户名\AppDa</description>
+    </item>
+    
+  </channel>
+</rss>

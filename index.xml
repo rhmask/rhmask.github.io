@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://rhmask.github.io/</link>
+    <link>https://rhamsk.github.io/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 13 Jan 2021 21:26:48 +0800</lastBuildDate><atom:link href="https://rhmask.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 21:26:48 +0800</lastBuildDate><atom:link href="https://rhamsk.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows右键菜单添加Terminal</title>
-      <link>https://rhmask.github.io/posts/windows_terminal/</link>
+      <link>https://rhamsk.github.io/posts/windows_terminal/</link>
       <pubDate>Wed, 13 Jan 2021 21:26:48 +0800</pubDate>
       
-      <guid>https://rhmask.github.io/posts/windows_terminal/</guid>
+      <guid>https://rhamsk.github.io/posts/windows_terminal/</guid>
       <description>&lt;p&gt;Terminal 可直接在微软商店下载即可&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://rhmask.github.io/about/</link>
+      <link>https://rhamsk.github.io/about/</link>
       <pubDate>Wed, 13 Jan 2021 17:23:42 +0800</pubDate>
       
-      <guid>https://rhmask.github.io/about/</guid>
-      <description>关于 这就是个测试页面</description>
+      <guid>https://rhamsk.github.io/about/</guid>
+      <description>关于 开心就好！</description>
     </item>
     
   </channel>
